@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社内AI勉強会のお知らせ</title>
+    <style>
+        :root {
+            --primary-color: #3a7bd5;
+            --secondary-color: #00d2ff;
+            --background: #f5f7fb;
+            --text-color: #1f2d3d;
+            --muted-text: #5f738c;
+            --card-bg: #ffffff;
+            --shadow-color: rgba(29, 53, 87, 0.12);
+            font-size: 16px;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Yu Gothic", Arial, sans-serif;
+            background: var(--background);
+            color: var(--text-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: clamp(1.5rem, 3vw, 3rem);
+        }
+
+        .announcement {
+            max-width: 960px;
+            width: min(100%, 960px);
+            background: var(--card-bg);
+            border-radius: 24px;
+            box-shadow: 0 20px 45px var(--shadow-color);
+            overflow: hidden;
+            display: grid;
+            grid-template-rows: minmax(260px, 1.4fr) minmax(220px, 1fr);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, rgba(58, 123, 213, 0.85), rgba(0, 210, 255, 0.85)),
+                        url('https://images.unsplash.com/photo-1527689368864-3a821dbccc34?auto=format&fit=crop&w=1600&q=80') center/cover;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: clamp(2rem, 4vw, 3.5rem);
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.4), transparent 45%);
+            mix-blend-mode: screen;
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            position: relative;
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            color: #fff;
+            text-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: clamp(1.5rem, 3vw, 2.5rem);
+            padding: clamp(2rem, 4vw, 3rem);
+        }
+
+        .detail-card {
+            background: linear-gradient(145deg, rgba(58, 123, 213, 0.08), rgba(0, 210, 255, 0.12));
+            border-radius: 18px;
+            padding: clamp(1.2rem, 2vw, 1.8rem);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 12px 24px rgba(58, 123, 213, 0.12);
+            transition: transform 200ms ease, box-shadow 200ms ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 36px rgba(58, 123, 213, 0.16);
+        }
+
+        .detail-card h2 {
+            margin: 0 0 0.6rem;
+            font-size: 0.95rem;
+            letter-spacing: 0.12em;
+            color: var(--muted-text);
+            text-transform: uppercase;
+        }
+
+        .detail-card p {
+            margin: 0;
+            font-size: clamp(1.1rem, 2.2vw, 1.35rem);
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 640px) {
+            body {
+                padding: 1rem;
+            }
+
+            .announcement {
+                border-radius: 18px;
+                grid-template-rows: minmax(200px, 1.3fr) auto;
+            }
+
+            .hero {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <article class="announcement" role="article" aria-labelledby="event-title">
+        <header class="hero">
+            <h1 id="event-title">未来を描く社内AI勉強会</h1>
+        </header>
+        <section class="details" aria-label="勉強会の詳細">
+            <div class="detail-card">
+                <h2>開催日時</h2>
+                <p>2024年8月21日（水） 18:30〜20:30</p>
+            </div>
+            <div class="detail-card">
+                <h2>場所</h2>
+                <p>本社オープンコラボレーションラウンジ</p>
+            </div>
+            <div class="detail-card">
+                <h2>テーマ</h2>
+                <p>社内業務に活かす生成AI活用アイデアソン</p>
+            </div>
+        </section>
+    </article>
+</body>
+</html>
